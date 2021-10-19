@@ -1,0 +1,33 @@
+<!--<template>
+    <lightning-tabset variant="vertical" class="tabs-active">
+        <lightning-tab label="Item One" value="1" onactive={handleActive}>
+            
+            {tabContent}
+        </lightning-tab>
+        <lightning-tab label="Item Two" value="2" onactive={handleActive}>
+            
+            {tabContent}
+        </lightning-tab>
+        <lightning-tab label="Item Three">
+            Three Content !
+        </lightning-tab>
+        <template if:true={showTabFour}>
+            <lightning-tab label="Item Four">
+                Four Content !
+            </lightning-tab>
+        </template>
+    </lightning-tabset>
+
+    <lightning-button label="Toggle Optional Tab" onclick={toggleOptionalTab} ></lightning-button>
+</template>-->
+
+<template>
+    <lightning-tabset variant="vertical" active-tab-value="1" class="tabs-active">
+        <template for:each={tabs} for:item="tab">
+            <lightning-tab label={tab.label} key={tab.value} value={tab.value} onactive={handleActive}>
+               
+            </lightning-tab>
+        </template>
+    </lightning-tabset>
+    <lightning-formatted-text value={activeValueMessage} ></lightning-formatted-text>
+</template>
